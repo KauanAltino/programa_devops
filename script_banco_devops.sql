@@ -1,0 +1,17 @@
+CREATE TABLE Clientes (
+  id INT PRIMARY KEY IDENTITY(1,1),
+  nome NVARCHAR(100),
+  email NVARCHAR(100)
+);
+
+CREATE TABLE Pedidos (
+  id INT PRIMARY KEY IDENTITY(1,1),
+  cliente_id INT FOREIGN KEY REFERENCES Clientes(id),
+  valor DECIMAL(10, 2)
+);
+
+CREATE TABLE Produtos (
+  id INT PRIMARY KEY IDENTITY(1,1),
+  nome NVARCHAR(100),
+  preco DECIMAL(10, 2)
+);
